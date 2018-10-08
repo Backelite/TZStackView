@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         view.addSubview(instructionLabel)
 
         resetButton.translatesAutoresizingMaskIntoConstraints = false
-        resetButton.setTitle("Reset", for: UIControlState())
+        resetButton.setTitle("Reset", for: UIControl.State())
         resetButton.addTarget(self, action: #selector(ViewController.reset), for: .touchUpInside)
         resetButton.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
         resetButton.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
@@ -93,16 +93,16 @@ class ViewController: UIViewController {
         ]
 
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-gap-[instructionLabel]-[resetButton]-gap-|",
-                options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+                                                           options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[tzStackView]|",
-                options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+                                                           options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[controlsLayoutContainer]|",
-                options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+                                                           options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
 
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-topspacing-[instructionLabel]-gap-[controlsLayoutContainer]-gap-[tzStackView]|",
-                options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+                                                           options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-topspacing-[resetButton]-gap-[controlsLayoutContainer]",
-                options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+                                                           options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
     }
 
     fileprivate func createViews() -> [UIView] {

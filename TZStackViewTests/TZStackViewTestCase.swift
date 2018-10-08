@@ -169,7 +169,7 @@ class TZStackViewTestCase: XCTestCase {
         if object1 == nil && object2 == nil {
             return true
         }
-        if let view1 = object1 as? UIView, let view2 = object2 as? UIView , view1 == view2 {
+        if let view1 = object1 as? UIView, let view2 = object2 as? UIView , view1.frame == view2.frame {
             return true
         }
         if object1 is UIStackView && object2 is TZStackView {
